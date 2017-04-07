@@ -1,17 +1,40 @@
 {
-    "buildNpmdoc":"image-to-ascii",
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "buildNpmdoc": "image-to-ascii",
+    "description": "api documentation for [image-to-ascii (v3.0.7)](https://github.com/IonicaBizau/image-to-ascii) [![npm package](https://img.shields.io/npm/v/npmdoc-image-to-ascii.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-image-to-ascii) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-image-to-ascii.svg)](https://travis-ci.org/npmdoc/node-npmdoc-image-to-ascii)",
     "devDependencies": {
-        "image-to-ascii": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "image-to-ascii": "*",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "name":"npmdoc-image-to-ascii",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-image-to-ascii",
+    "keywords": [
+        "documentation",
+        "image-to-ascii"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_image_to_ascii.js",
+    "name": "npmdoc-image-to-ascii",
+    "nameAlias": "npmdoc_image_to_ascii",
+    "nameOriginal": "npmdoc-image-to-ascii",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/npmdoc/node-npmdoc-image-to-ascii"
     },
     "scripts": {
-        "build-ci": "utility2 shReadmeTest build_ci.sh"
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
     "version": "0.0.1"
 }
