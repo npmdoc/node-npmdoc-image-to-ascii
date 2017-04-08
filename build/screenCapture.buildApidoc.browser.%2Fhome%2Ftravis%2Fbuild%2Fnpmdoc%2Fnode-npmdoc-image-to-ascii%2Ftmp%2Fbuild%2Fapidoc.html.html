@@ -1,0 +1,367 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/IonicaBizau/image-to-ascii">image-to-ascii (v3.0.7)</a>
+</h1>
+<h4>A Node.JS module that converts images to ASCII art.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.image-to-ascii">module image-to-ascii</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.image-to-ascii.defaults.stringify_fn">
+            function <span class="apidocSignatureSpan">image-to-ascii.</span>defaults.stringify_fn
+            <span class="apidocSignatureSpan">(pixels, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">image-to-ascii.</span>defaults</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.image-to-ascii.defaults">module image-to-ascii.defaults</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">image-to-ascii.defaults.</span>concat</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">image-to-ascii.defaults.</span>stringify</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.image-to-ascii.defaults.stringify_fn">
+            function <span class="apidocSignatureSpan">image-to-ascii.defaults.</span>stringify_fn
+            <span class="apidocSignatureSpan">(pixels, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">image-to-ascii.defaults.</span>size</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">image-to-ascii.defaults.</span>size_options</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.image-to-ascii.defaults.stringify_fn">module image-to-ascii.defaults.stringify_fn</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.image-to-ascii.defaults.stringify_fn.stringify_fn">
+            function <span class="apidocSignatureSpan">image-to-ascii.defaults.</span>stringify_fn
+            <span class="apidocSignatureSpan">(pixels, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.image-to-ascii.defaults.stringify_fn.join">
+            function <span class="apidocSignatureSpan">image-to-ascii.defaults.stringify_fn.</span>join
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.image-to-ascii.defaults.stringify_fn.stringify">
+            function <span class="apidocSignatureSpan">image-to-ascii.defaults.stringify_fn.</span>stringify
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.image-to-ascii.defaults.stringify_fn.stringifyMatrix">
+            function <span class="apidocSignatureSpan">image-to-ascii.defaults.stringify_fn.</span>stringifyMatrix
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.image-to-ascii" id="apidoc.module.image-to-ascii">module image-to-ascii</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.image-to-ascii.defaults.stringify_fn" id="apidoc.element.image-to-ascii.defaults.stringify_fn">
+        function <span class="apidocSignatureSpan">image-to-ascii.</span>defaults.stringify_fn
+        <span class="apidocSignatureSpan">(pixels, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function asciifyMatrix(pixels, options) {
+    var asciifier = new asciifyPixel.Asciifier(options);
+
+    options = ul.merge(options, {
+        stringify: true,
+        concat: true
+    });
+
+    if (!Array.isArray(pixels)) {
+        return [];
+    }
+
+    if (!Array.isArray(pixels[0])) {
+        pixels = [pixels];
+    }
+
+    var result = pixels.map(function (row) {
+        return row.map(function (p) {
+            return asciifier.asciify(p);
+        });
+    });
+
+    if (options.stringify !== false) {
+        result = asciifyMatrix.stringify(result);
+    }
+
+    if (options.concat !== false) {
+        result = asciifyMatrix.join(result);
+    }
+
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.image-to-ascii.defaults" id="apidoc.module.image-to-ascii.defaults">module image-to-ascii.defaults</a></h1>
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.image-to-ascii.defaults.stringify_fn" id="apidoc.element.image-to-ascii.defaults.stringify_fn">
+        function <span class="apidocSignatureSpan">image-to-ascii.defaults.</span>stringify_fn
+        <span class="apidocSignatureSpan">(pixels, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function asciifyMatrix(pixels, options) {
+    var asciifier = new asciifyPixel.Asciifier(options);
+
+    options = ul.merge(options, {
+        stringify: true,
+        concat: true
+    });
+
+    if (!Array.isArray(pixels)) {
+        return [];
+    }
+
+    if (!Array.isArray(pixels[0])) {
+        pixels = [pixels];
+    }
+
+    var result = pixels.map(function (row) {
+        return row.map(function (p) {
+            return asciifier.asciify(p);
+        });
+    });
+
+    if (options.stringify !== false) {
+        result = asciifyMatrix.stringify(result);
+    }
+
+    if (options.concat !== false) {
+        result = asciifyMatrix.join(result);
+    }
+
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.image-to-ascii.defaults.stringify_fn" id="apidoc.module.image-to-ascii.defaults.stringify_fn">module image-to-ascii.defaults.stringify_fn</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.image-to-ascii.defaults.stringify_fn.stringify_fn" id="apidoc.element.image-to-ascii.defaults.stringify_fn.stringify_fn">
+        function <span class="apidocSignatureSpan">image-to-ascii.defaults.</span>stringify_fn
+        <span class="apidocSignatureSpan">(pixels, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function asciifyMatrix(pixels, options) {
+    var asciifier = new asciifyPixel.Asciifier(options);
+
+    options = ul.merge(options, {
+        stringify: true,
+        concat: true
+    });
+
+    if (!Array.isArray(pixels)) {
+        return [];
+    }
+
+    if (!Array.isArray(pixels[0])) {
+        pixels = [pixels];
+    }
+
+    var result = pixels.map(function (row) {
+        return row.map(function (p) {
+            return asciifier.asciify(p);
+        });
+    });
+
+    if (options.stringify !== false) {
+        result = asciifyMatrix.stringify(result);
+    }
+
+    if (options.concat !== false) {
+        result = asciifyMatrix.join(result);
+    }
+
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.image-to-ascii.defaults.stringify_fn.join" id="apidoc.element.image-to-ascii.defaults.stringify_fn.join">
+        function <span class="apidocSignatureSpan">image-to-ascii.defaults.stringify_fn.</span>join
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function join(input) {
+    return input.map(function (row) {
+        return row.join("");
+    }).join("\n");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.image-to-ascii.defaults.stringify_fn.stringify" id="apidoc.element.image-to-ascii.defaults.stringify_fn.stringify">
+        function <span class="apidocSignatureSpan">image-to-ascii.defaults.stringify_fn.</span>stringify
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function stringify(input) {
+    return input.map(function (row) {
+        return row.map(function (c) {
+            return c.toString();
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.image-to-ascii.defaults.stringify_fn.stringifyMatrix" id="apidoc.element.image-to-ascii.defaults.stringify_fn.stringifyMatrix">
+        function <span class="apidocSignatureSpan">image-to-ascii.defaults.stringify_fn.</span>stringifyMatrix
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function stringifyMatrix(input) {
+    return asciifyMatrix.join(asciifyMatrix.stringify(input));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
