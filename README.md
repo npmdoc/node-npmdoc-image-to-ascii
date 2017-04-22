@@ -1,9 +1,14 @@
-# api documentation for  [image-to-ascii (v3.0.7)](https://github.com/IonicaBizau/image-to-ascii)  [![npm package](https://img.shields.io/npm/v/npmdoc-image-to-ascii.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-image-to-ascii) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-image-to-ascii.svg)](https://travis-ci.org/npmdoc/node-npmdoc-image-to-ascii)
+# npmdoc-image-to-ascii
+
+#### api documentation for  [image-to-ascii (v3.0.7)](https://github.com/IonicaBizau/image-to-ascii)  [![npm package](https://img.shields.io/npm/v/npmdoc-image-to-ascii.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-image-to-ascii) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-image-to-ascii.svg)](https://travis-ci.org/npmdoc/node-npmdoc-image-to-ascii)
+
 #### A Node.JS module that converts images to ASCII art.
 
-[![NPM](https://nodei.co/npm/image-to-ascii.png?downloads=true)](https://www.npmjs.com/package/image-to-ascii)
+[![NPM](https://nodei.co/npm/image-to-ascii.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/image-to-ascii)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-image-to-ascii/build/screenCapture.buildNpmdoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-image-to-ascii%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-image-to-ascii/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-image-to-ascii/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-image-to-ascii/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-image-to-ascii/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-image-to-ascii/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-image-to-ascii/build/screenCapture.npmPackageListing.svg)
 
@@ -18,7 +23,6 @@
 {
     "author": {
         "name": "Ionică Bizău",
-        "email": "bizauionica@gmail.com",
         "url": "https://ionicabizau.net"
     },
     "blah": {
@@ -55,19 +59,16 @@
     },
     "contributors": [
         {
-            "name": "Eric Baer",
-            "email": "me@ericbaer.com"
+            "name": "Eric Baer"
         },
         {
-            "name": "ComFreek",
-            "email": "comfreek@outlook.com"
+            "name": "ComFreek"
         },
         {
             "name": "Szabo Cristian"
         },
         {
-            "name": "Aleen",
-            "email": "aleen42@vip.qq.com"
+            "name": "Aleen"
         }
     ],
     "dependencies": {
@@ -112,13 +113,11 @@
     "main": "lib/index.js",
     "maintainers": [
         {
-            "name": "ionicabizau",
-            "email": "bizauionica@yahoo.com"
+            "name": "ionicabizau"
         }
     ],
     "name": "image-to-ascii",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+ssh://git@github.com/IonicaBizau/image-to-ascii.git"
@@ -126,206 +125,9 @@
     "scripts": {
         "test": "node example/index.js"
     },
-    "version": "3.0.7"
+    "version": "3.0.7",
+    "bin": {}
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module image-to-ascii](#apidoc.module.image-to-ascii)
-1.  [function <span class="apidocSignatureSpan">image-to-ascii.</span>defaults.stringify_fn (pixels, options)](#apidoc.element.image-to-ascii.defaults.stringify_fn)
-1.  object <span class="apidocSignatureSpan">image-to-ascii.</span>defaults
-
-#### [module image-to-ascii.defaults](#apidoc.module.image-to-ascii.defaults)
-1.  boolean <span class="apidocSignatureSpan">image-to-ascii.defaults.</span>concat
-1.  boolean <span class="apidocSignatureSpan">image-to-ascii.defaults.</span>stringify
-1.  [function <span class="apidocSignatureSpan">image-to-ascii.defaults.</span>stringify_fn (pixels, options)](#apidoc.element.image-to-ascii.defaults.stringify_fn)
-1.  object <span class="apidocSignatureSpan">image-to-ascii.defaults.</span>size
-1.  object <span class="apidocSignatureSpan">image-to-ascii.defaults.</span>size_options
-
-#### [module image-to-ascii.defaults.stringify_fn](#apidoc.module.image-to-ascii.defaults.stringify_fn)
-1.  [function <span class="apidocSignatureSpan">image-to-ascii.defaults.</span>stringify_fn (pixels, options)](#apidoc.element.image-to-ascii.defaults.stringify_fn.stringify_fn)
-1.  [function <span class="apidocSignatureSpan">image-to-ascii.defaults.stringify_fn.</span>join (input)](#apidoc.element.image-to-ascii.defaults.stringify_fn.join)
-1.  [function <span class="apidocSignatureSpan">image-to-ascii.defaults.stringify_fn.</span>stringify (input)](#apidoc.element.image-to-ascii.defaults.stringify_fn.stringify)
-1.  [function <span class="apidocSignatureSpan">image-to-ascii.defaults.stringify_fn.</span>stringifyMatrix (input)](#apidoc.element.image-to-ascii.defaults.stringify_fn.stringifyMatrix)
-
-
-
-# <a name="apidoc.module.image-to-ascii"></a>[module image-to-ascii](#apidoc.module.image-to-ascii)
-
-#### <a name="apidoc.element.image-to-ascii.defaults.stringify_fn"></a>[function <span class="apidocSignatureSpan">image-to-ascii.</span>defaults.stringify_fn (pixels, options)](#apidoc.element.image-to-ascii.defaults.stringify_fn)
-- description and source-code
-```javascript
-function asciifyMatrix(pixels, options) {
-    var asciifier = new asciifyPixel.Asciifier(options);
-
-    options = ul.merge(options, {
-        stringify: true,
-        concat: true
-    });
-
-    if (!Array.isArray(pixels)) {
-        return [];
-    }
-
-    if (!Array.isArray(pixels[0])) {
-        pixels = [pixels];
-    }
-
-    var result = pixels.map(function (row) {
-        return row.map(function (p) {
-            return asciifier.asciify(p);
-        });
-    });
-
-    if (options.stringify !== false) {
-        result = asciifyMatrix.stringify(result);
-    }
-
-    if (options.concat !== false) {
-        result = asciifyMatrix.join(result);
-    }
-
-    return result;
-}
-```
-- example usage
-```shell
-n/a
-```
-
-
-
-# <a name="apidoc.module.image-to-ascii.defaults"></a>[module image-to-ascii.defaults](#apidoc.module.image-to-ascii.defaults)
-
-#### <a name="apidoc.element.image-to-ascii.defaults.stringify_fn"></a>[function <span class="apidocSignatureSpan">image-to-ascii.defaults.</span>stringify_fn (pixels, options)](#apidoc.element.image-to-ascii.defaults.stringify_fn)
-- description and source-code
-```javascript
-function asciifyMatrix(pixels, options) {
-    var asciifier = new asciifyPixel.Asciifier(options);
-
-    options = ul.merge(options, {
-        stringify: true,
-        concat: true
-    });
-
-    if (!Array.isArray(pixels)) {
-        return [];
-    }
-
-    if (!Array.isArray(pixels[0])) {
-        pixels = [pixels];
-    }
-
-    var result = pixels.map(function (row) {
-        return row.map(function (p) {
-            return asciifier.asciify(p);
-        });
-    });
-
-    if (options.stringify !== false) {
-        result = asciifyMatrix.stringify(result);
-    }
-
-    if (options.concat !== false) {
-        result = asciifyMatrix.join(result);
-    }
-
-    return result;
-}
-```
-- example usage
-```shell
-n/a
-```
-
-
-
-# <a name="apidoc.module.image-to-ascii.defaults.stringify_fn"></a>[module image-to-ascii.defaults.stringify_fn](#apidoc.module.image-to-ascii.defaults.stringify_fn)
-
-#### <a name="apidoc.element.image-to-ascii.defaults.stringify_fn.stringify_fn"></a>[function <span class="apidocSignatureSpan">image-to-ascii.defaults.</span>stringify_fn (pixels, options)](#apidoc.element.image-to-ascii.defaults.stringify_fn.stringify_fn)
-- description and source-code
-```javascript
-function asciifyMatrix(pixels, options) {
-    var asciifier = new asciifyPixel.Asciifier(options);
-
-    options = ul.merge(options, {
-        stringify: true,
-        concat: true
-    });
-
-    if (!Array.isArray(pixels)) {
-        return [];
-    }
-
-    if (!Array.isArray(pixels[0])) {
-        pixels = [pixels];
-    }
-
-    var result = pixels.map(function (row) {
-        return row.map(function (p) {
-            return asciifier.asciify(p);
-        });
-    });
-
-    if (options.stringify !== false) {
-        result = asciifyMatrix.stringify(result);
-    }
-
-    if (options.concat !== false) {
-        result = asciifyMatrix.join(result);
-    }
-
-    return result;
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.image-to-ascii.defaults.stringify_fn.join"></a>[function <span class="apidocSignatureSpan">image-to-ascii.defaults.stringify_fn.</span>join (input)](#apidoc.element.image-to-ascii.defaults.stringify_fn.join)
-- description and source-code
-```javascript
-function join(input) {
-    return input.map(function (row) {
-        return row.join("");
-    }).join("\n");
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.image-to-ascii.defaults.stringify_fn.stringify"></a>[function <span class="apidocSignatureSpan">image-to-ascii.defaults.stringify_fn.</span>stringify (input)](#apidoc.element.image-to-ascii.defaults.stringify_fn.stringify)
-- description and source-code
-```javascript
-function stringify(input) {
-    return input.map(function (row) {
-        return row.map(function (c) {
-            return c.toString();
-        });
-    });
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.image-to-ascii.defaults.stringify_fn.stringifyMatrix"></a>[function <span class="apidocSignatureSpan">image-to-ascii.defaults.stringify_fn.</span>stringifyMatrix (input)](#apidoc.element.image-to-ascii.defaults.stringify_fn.stringifyMatrix)
-- description and source-code
-```javascript
-function stringifyMatrix(input) {
-    return asciifyMatrix.join(asciifyMatrix.stringify(input));
-}
-```
-- example usage
-```shell
-n/a
 ```
 
 
