@@ -56,6 +56,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.image-to-ascii.image-to-ascii">
+            function <span class="apidocSignatureSpan"></span>image-to-ascii
+            <span class="apidocSignatureSpan">(source, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.image-to-ascii.defaults.stringify_fn">
             function <span class="apidocSignatureSpan">image-to-ascii.</span>defaults.stringify_fn
             <span class="apidocSignatureSpan">(pixels, options)</span>
@@ -152,6 +161,47 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.image-to-ascii" id="apidoc.module.image-to-ascii">module image-to-ascii</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.image-to-ascii.image-to-ascii" id="apidoc.element.image-to-ascii.image-to-ascii">
+        function <span class="apidocSignatureSpan"></span>image-to-ascii
+        <span class="apidocSignatureSpan">(source, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function imageToAscii(source, options, callback) {
+
+    if (typeof options === "function") {
+        callback = options;
+        options = {};
+    }
+
+    options = ul.deepMerge(options, DEFAULTS);
+
+    oneByOne([function (next) {
+        return new ImageParser(source).parse(next);
+    }, function (next, img) {
+        var newSize = computeSize(options.size, {
+            width: img.width(),
+            height: img.height()
+        }, options.size_options);
+        imgpx(img, {
+            resize: [newSize.width, newSize.height],
+            image_type: options.image_type
+        }, next);
+    }, function (next, pixels) {
+        return next(null, options.stringify_fn(pixels, options));
+    }], function (err, data) {
+        if (err) {
+            return callback(err);
+        }
+        callback(null, data.slice(-1)[0], data[0], data[1]);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
